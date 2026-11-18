@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio Studio — Éditeur visuel</title>
+  <link rel="stylesheet" href="https://unpkg.com/grapesjs@0.22.13/dist/css/grapes.min.css">
+  <link rel="stylesheet" href="./studio.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">G</span><span>PORTFOLIO <b>STUDIO</b></span></div>
+    <div class="project-name">Mon portfolio <span class="saved-dot" id="savedDot"></span></div>
+    <div class="top-actions">
+      <button class="top-btn" id="undoBtn" title="Annuler">↶</button>
+      <button class="top-btn" id="redoBtn" title="Rétablir">↷</button>
+      <button class="top-btn" id="desktopBtn" title="Vue ordinateur">Desktop</button>
+      <button class="top-btn" id="tabletBtn" title="Vue tablette">Tablette</button>
+      <button class="top-btn" id="mobileBtn" title="Vue mobile">Mobile</button>
+      <button class="top-btn preview-btn" id="previewBtn">Aperçu</button>
+      <button class="top-btn export-btn" id="exportBtn">Exporter le site ↓</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <aside class="left-panel">
+      <div class="panel-tabs">
+        <button class="tab active" data-tab="blocks">Éléments</button>
+        <button class="tab" data-tab="layers">Calques</button>
+      </div>
+      <section class="panel-section active" id="blocksPanel">
+        <div class="panel-heading">ÉLÉMENTS</div>
+        <p class="panel-help">Glisse un élément dans la page.</p>
+        <div id="blocks"></div>
+      </section>
+      <section class="panel-section" id="layersPanel">
+        <div class="panel-heading">STRUCTURE DE LA PAGE</div>
+        <div id="layers"></div>
+      </section>
+      <div class="left-footer">
+        <span class="status-dot"></span> Éditeur local
+      </div>
+    </aside>
+
+    <section class="canvas-area">
+      <div class="canvas-toolbar">
+        <span>PAGE / <b>ACCUEIL</b></span>
+        <span class="canvas-hint">Sélectionne un élément pour le modifier</span>
+        <button id="clearBtn" class="clear-btn">Vider la page</button>
+      </div>
+      <div id="gjs"></div>
+    </section>
+
+    <aside class="right-panel">
+      <div class="right-heading">PROPRIÉTÉS</div>
+      <div class="right-tabs">
+        <button class="right-tab active" data-tab="styles">Style</button>
+        <button class="right-tab" data-tab="traits">Réglages</button>
+      </div>
+      <section class="right-section active" id="stylesPanel">
+        <div id="selectors"></div>
+        <div id="styles"></div>
+      </section>
+      <section class="right-section" id="traitsPanel">
+        <div id="traits"></div>
+      </section>
+      <div class="right-note">Astuce : sélectionne un bloc dans le canvas pour accéder à ses styles et réglages.</div>
+    </aside>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="https://unpkg.com/grapesjs@0.22.13/dist/grapes.min.js"></script>
+  <script src="./studio.js"></script>
+</body>
+</html>
